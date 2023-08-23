@@ -2,26 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
+html,
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    padding:0;
+    margin:0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.card {
+    @apply flex bg-white bg-opacity-80 hover:bg-opacity-60  flex-col justify-between mb-5 block rounded-lg border border-gray-700 shadow-md hover:shadow-xl 
+}
+
+
+
+  .default-button{
+    @apply rounded bg-gray-400 py-2 px-4 text-black shadow outline-none hover:bg-gray-300 active:bg-gray-400
+ }
+ 
+  .delete-button {
+    @apply rounded  bg-red-600 py-2 px-4 shadow outline-none hover:bg-red-700 active:bg-red-800;
+  }
+  .edit-button {
+    @apply rounded  bg-green-300 py-2 px-4 shadow outline-none hover:bg-green-500 active:bg-green-700;
+  }
+  .dropdown-link {
+    @apply flex p-2 bg-green-300 hover:bg-green-500 bg-opacity-80 hover:bg-opacity-80 ;
+}
+.nav-bar {
+  @apply flex p-2 text-white text-lg hover:text-green-500
+ }
+.alert-error {
+  @apply  my-3 rounded-lg bg-red-400 p-3 text-red-600;
+}
+
+.alert-success {
+  @apply my-3 rounded-lg bg-green-700 p-3 text-green-300;
+}
+
+  input,
+select,
+textarea {
+    @apply rounded border p-2 outline-none ring-green-300 focus:ring;
 }
